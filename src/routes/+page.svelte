@@ -1,34 +1,9 @@
 <script>
 	/** @type {import('./$types').PageData} */
-	//import Station from '../components/Station.svelte';
 	import { onMount, onDestroy } from 'svelte';
 	import { stations, stationIDs, tags } from '../stores.js'
 
 	let API_ENDPOINT = `https://37dff9c1-b164-4821-93d5-59684591f4f0.ma.bw-cloud-instance.org/api`; 
-
-	/*
-	// Poll for updates
-	const ticker = setInterval(async () => {
-		const fetchOptions = { mode: 'cors' };
-
-		const requests = stationIDss.map(async (stationID) => {
-			try {
-				const response = await fetch(`${API_ENDPOINT}/stations/${stationID}/tags`, fetchOptions);
-					if (response.ok) {
-						const data = await response.json();
-						stations.updateTags(stationID, data);
-					} else {
-						console.error(`Failed to fetch data for station ${stationID}: ${response.status} - ${response.statusText}`);
-					}
-			} catch (error) {
-				console.error(`Failed to fetch data for station ${stationID}: ${error.message}`);
-			}
-		});
-
-		// Wait for all requests to complete
-		await Promise.all(requests);
-	}, 3 * 1000);
-	*/
 
 	// Poll for updates every 2 seconds 
 	const ticker = setInterval(async () => {
@@ -53,7 +28,6 @@
 		clearInterval(ticker) ; 
 	});	
 </script>
-
 
 
 <div class="grid grid grid-rows-[auto_1fr_auto] h-full">
