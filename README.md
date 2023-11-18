@@ -16,7 +16,7 @@ It uses [Svelte](https://svelte.dev/docs/introduction) and [Tailwind](https://ta
 
 It is intended to be used in the lecture "Soziotechnische Studien: Container, Paletten, Verpackungen" taught by Prof. Dr. Martin Binder at [PH-Weingarten](https://technik.ph-weingarten.de/das-fach/das-fach/).
 
-The project should be used in conjunction with this [RESTful](https://github.com/ITBenni/himbeer-verfolgung-backend) backend and this [RFID reader](https://github.com/ITBenni/himbeer-verfolgung-rfid). 
+The project should be used in conjunction with this [RESTful](https://github.com/ITBenni/himbeer-verfolgung-api) backend and this [RFID reader](https://github.com/ITBenni/himbeer-verfolgung-rfid). 
 
 
 ## 🧭 Getting Started
