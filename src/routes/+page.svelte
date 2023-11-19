@@ -36,7 +36,7 @@
 		{#each Object.values($stations).sort((a, b) => a.station_uuid.localeCompare(b.station_uuid)) as station }			
 			<div class="flex-initial w-70 border border-indigo-600 rounded px-2 py-4 bg-white">
 				<h2 class="text-2xl font-bold">Station: {station.name}</h2>
-				<p class="text-sm">{station.station_uuid}</p>
+				<p class="text-xs">{station.station_uuid}</p>
 		
 				<h3 class="text-xl font-bold mt-4 mb-2">Tags</h3>
 	
