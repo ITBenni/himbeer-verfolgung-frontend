@@ -19,7 +19,7 @@
 		} catch (error) {
 			console.error(`Failed to fetch data for stations: ${error.message}`);
 		}
-	}, 3 * 1000);
+	}, 2 * 1000);
 
 	onDestroy(() => {
 		clearInterval(ticker) ; 
