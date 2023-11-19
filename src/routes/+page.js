@@ -1,8 +1,9 @@
 /** @type {import('./$types').PageLoad} */
 import { error } from '@sveltejs/kit';
 import { stations } from '../stores.js'
+import { PUBLIC_API_ENDPOINT } from '$env/static/public'
 
-const API_ENDPOINT = import.meta.env.API_ENDPOINT;
+const API_ENDPOINT = PUBLIC_API_ENDPOINT;
 
 export async function load({ fetch, params }) {
 	// Necessary for #&^@^!@&#*#^ CORS to work

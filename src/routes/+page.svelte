@@ -2,8 +2,9 @@
 	/** @type {import('./$types').PageData} */
 	import { onMount, onDestroy } from 'svelte';
 	import { stations, stationIDs, tags } from '../stores.js'
+	import { PUBLIC_API_ENDPOINT } from '$env/static/public'
 
-	let API_ENDPOINT = import.meta.env.API_ENDPOINT;
+	const API_ENDPOINT = PUBLIC_API_ENDPOINT;
 
 	// Poll for updates every 2 seconds 
 	const ticker = setInterval(async () => {
@@ -20,10 +21,6 @@
 		}
 	}, 3 * 1000);
 
-	onMount(() => {
-		API_ENDPOINT = `${window.location.protocol}//${window.location.host}/api`; 
-	});	
-
 	onDestroy(() => {
 		clearInterval(ticker) ; 
 	});	
@@ -37,9 +34,9 @@
 	
 	<main class="flex justify-center items-start gap-8 px-8">
 		{#each Object.values($stations).sort((a, b) => a.station_uuid.localeCompare(b.station_uuid)) as station }			
-			<div class="flex-initial w-64 border border-indigo-600 rounded px-2 py-4 bg-white">
+			<div class="flex-initial w-70 border border-indigo-600 rounded px-2 py-4 bg-white">
 				<h2 class="text-2xl font-bold">Station: {station.name}</h2>
-				<p>{station.station_uuid}</p>
+				<p class="text-sm">{station.station_uuid}</p>
 		
 				<h3 class="text-xl font-bold mt-4 mb-2">Tags</h3>
 	
