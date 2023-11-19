@@ -3,7 +3,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { stations, stationIDs, tags } from '../stores.js'
 
-	let API_ENDPOINT = `https://37dff9c1-b164-4821-93d5-59684591f4f0.ma.bw-cloud-instance.org/api`; 
+	let API_ENDPOINT = import.meta.env.API_ENDPOINT;
 
 	// Poll for updates every 2 seconds 
 	const ticker = setInterval(async () => {

@@ -2,7 +2,7 @@
 import { error } from '@sveltejs/kit';
 import { stations } from '../stores.js'
 
-let API_ENDPOINT = `https://37dff9c1-b164-4821-93d5-59684591f4f0.ma.bw-cloud-instance.org/api`; 
+const API_ENDPOINT = import.meta.env.API_ENDPOINT;
 
 export async function load({ fetch, params }) {
 	// Necessary for #&^@^!@&#*#^ CORS to work
